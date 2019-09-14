@@ -1,0 +1,11 @@
+document.write("    <!-- \/. WRAPPER  -->");
+document.write("    <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->");
+document.write("    <!-- JQUERY SCRIPTS -->");
+document.write("    <script src=\"assets\/js\/jquery-1.10.2.js\"><\/script>");
+document.write("      <!-- BOOTSTRAP SCRIPTS -->");
+document.write("    <script src=\"assets\/js\/bootstrap.min.js\"><\/script>");
+document.write("      <!-- CUSTOM SCRIPTS -->");
+document.write("    <script src=\"assets\/js\/custom.js\"><\/script>");
+document.write("<\/body>");
+document.write("<\/html>");
+document.write("");
