@@ -35,7 +35,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1 style="color:white;">      🎾 SquashRank</h1>
+						<h1 style="color:white;">🎾 SquashRank</h1>
 					</div>
 				</div>
 			</div>
@@ -67,17 +67,14 @@
     <!-- START DYNAMIC  -->
     <div id="page-wrapper" >
     <div id="page-inner">
-    <div class="container">
       <h2>Add Player</h2>
-
-      <form>
+      <form action="/user_create" method="POST">
 					<div class="form-group">
 					  <label for="usr">Player Name:</label>
-					  <input type="text" class="form-control" id="usr">
+					  <input type="text" class="form-control" id="usr" name="name">
 					</div>
-					<a type="button" class="btn btn-success">Submit</a>
+					<button class="btn btn-success">Submit</button>
 			 </form>
-    </div>
     </div>
     </div>
     <!-- END DYNAMIC  -->
@@ -92,3 +89,15 @@
     <script src="assets/js/custom.js"></script>
 </body>
 </html>
+
+<script>
+  const data = { name: "jack"};
+  const options = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  }
+  fetch('/api', options)
+</script>
