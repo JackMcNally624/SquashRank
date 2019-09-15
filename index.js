@@ -5,6 +5,10 @@ var app = express();
 var port = process.env.port || 8080;
 
 const bodyParser = require('body-parser');
+const Datastore = require('nedb');
+
+const database = new Datastore('database.db');
+database.loadDatabase();
 
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -18,8 +22,6 @@ console.log('Listening on port: ', port);
 app.use(express.json({ limit: '1mb'}));
 
 app.post('/user_create', (request, response) => {
-  console.log("Creating a new user...");
-  console.log(request.body.name);
-  const name = request.body.name;
+  database.insert(request.body);
   response.end();
 });
