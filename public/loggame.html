@@ -43,9 +43,6 @@
 			<nav class="navbar-default navbar-side" role="navigation">
 				<div class="sidebar-collapse">
 					<ul class="nav" id="main-menu">
-
-
-
 						<li class="active-link">
 							<a href="index.html" ><i class="fa fa-desktop "></i>Leader Board</a>
 						</li>
@@ -57,11 +54,8 @@
             <li>
 							<a href="addplayer.html"><i class="fa fa-plus "></i>Add a Player</a>
 						</li>
-
-
 					</ul>
-								</div>
-
+				</div>
 			</nav>
 
     <!-- START DYNAMIC  -->
@@ -74,30 +68,45 @@
       <form action="/game_log" method="POST">
 
           <div class="form-group">
+					  <label for="winner">Winning Player:</label>
+  					<select class="form-control" id="winner" name="winner">
+      				<option value=""></option>
+              <script>
+                getData();
+                async function getData() {
+                  const response = await fetch('/loadplayers');
+                  const data = await response.json();
 
-					  <label for="usr">Winning Player:</label>
-					  <select class="form-control">
-						<option value=""></option>
-						<option value="BU1">Test</option>
-						<option value="BU2">Test</option>
-						<option value="BU3">Test</option>
-						<option value="BU4">Test</option>
-					  </select>
-
+                  for (item of data) {
+                    const option = document.createElement('option');
+                    option.textContent = `${item.name}`;
+                    document.getElementById("winner").append(option);
+                  }
+                }
+              </script>
+  					</select>
 					</div>
 
           <div class="form-group">
+					  <label for="loser">Losing Player:</label>
+  					<select class="form-control" id="loser" name="loser">
+      				<option value=""></option>
+              <script>
+                getData();
+                async function getData() {
+                  const response = await fetch('/loadplayers');
+                  const data = await response.json();
 
-					  <label for="usr">Losing Player:</label>
-					  <select class="form-control">
-						<option value=""></option>
-						<option value="BU1">Test</option>
-						<option value="BU2">Test</option>
-						<option value="BU3">Test</option>
-						<option value="BU4">Test</option>
-					  </select>
-
+                  for (item of data) {
+                    const option = document.createElement('option');
+                    option.textContent = `${item.name}`;
+                    document.getElementById("loser").append(option);
+                  }
+                }
+              </script>
+  					</select>
 					</div>
+
 					<button class="btn btn-success">Submit</button>
 			 </form>
 
