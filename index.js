@@ -33,3 +33,13 @@ app.post('/game_log', (request, response) => {
   gameLog.insert(request.body);
   response.end();
 });
+
+app.get('/loadplayers', (request, response) => {
+  database.find({}, (err, data) => {
+    if (err) {
+      response.end();
+      return;
+    }
+    response.json(data);
+  });
+});
