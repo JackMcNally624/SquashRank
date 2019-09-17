@@ -31,15 +31,17 @@ app.post('/user_create', (request, response) => {
 
 app.post('/game_log', (request, response) => {
   gameLog.insert(request.body);
-  response.end();
+  response.sendFile(path.join(__dirname + '/public/loggame.html'));
 });
 
 app.get('/loadplayers', (request, response) => {
   database.find({}, (err, data) => {
-    if (err) {
-      response.end();
-      return;
-    }
+    response.json(data);
+  });
+});
+
+app.get('/loadgames', (request, response) => {
+  gameLog.find({}, (err, data) => {
     response.json(data);
   });
 });
