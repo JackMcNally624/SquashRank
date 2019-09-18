@@ -21,7 +21,7 @@ async function getData() {
   for (let i = 1; i < data.length; i++) {
     let j = i - 1;
     let tmp = data[i];
-    while (j >= 0 && data[j].wins < tmp.wins) {
+    while (j >= 0 && data[j].elo < tmp.elo) {
       data[j + 1] = data[j];
       j--;
     }
