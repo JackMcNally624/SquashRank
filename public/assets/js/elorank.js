@@ -18,6 +18,16 @@ async function getData() {
     item.wins = wins;
   }
 
+  for (item of data) {
+    var losses = 0;
+    for (game of games) {
+      if (`${game.loser}` == `${item.name}`) {
+        losses++;
+      }
+    }
+    item.losses = losses;
+  }
+
   for (let i = 1; i < data.length; i++) {
     let j = i - 1;
     let tmp = data[i];
@@ -33,10 +43,14 @@ async function getData() {
     const rank = document.createElement('td');
     const name = document.createElement('td');
     const score = document.createElement('td');
+    const wincol = document.createElement('td');
+    const losscol = document.createElement('td');
     rank.textContent = ranknum.toString();
     name.textContent = `${item.name}`;
-    score.textContent = `${item.elo}`; //Change this to elo when the time comes
-    row.append(rank, name, score);
+    score.textContent = `${item.elo}`;
+    wincol.textContent = `${item.wins}`;
+    losscol.textContent = `${item.losses}`;
+    row.append(rank, name, score, wincol, losscol);
     document.getElementById("tablebody").append(row);
     ranknum++;
   }
