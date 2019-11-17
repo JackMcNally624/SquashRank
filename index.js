@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var EloRank = require('elo-rank');
-var elo = new EloRank();
+var elo = new EloRank(35);
 
 //Specify a port
 var port = process.env.port || 8080;
@@ -28,11 +28,13 @@ app.use(express.json({ limit: '1mb'}));
 
 app.post('/user_create', (request, response) => {
   database.insert(request.body);
+  console.log(request.body);
   response.sendFile(path.join(__dirname + '/public/addplayer.html'));
 });
 
 app.post('/game_log', (request, response) => {
   gameLog.insert(request.body);
+  console.log(request.body);
   response.sendFile(path.join(__dirname + '/public/loggame.html'));
 });
 
