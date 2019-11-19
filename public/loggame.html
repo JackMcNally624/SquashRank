@@ -76,6 +76,7 @@
                 async function getData() {
                   const response = await fetch('/loadplayers');
                   const data = await response.json();
+                  console.log(data);
 
                   for (item of data) {
                     const option = document.createElement('option');

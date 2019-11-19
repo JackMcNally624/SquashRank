@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "squashrank-a0648"
+    "default": "squashrank-c21f3",
+    "SquashRank": "squashrank-c21f3"
   }
 }
