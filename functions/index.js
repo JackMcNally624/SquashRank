@@ -13,12 +13,59 @@ gameLog.loadDatabase();
 
 const admin = require('firebase-admin');
 
-//admin.initializeApp(functions.config().firebase);
 
+// admin.initializeApp(functions.config().firebase);
+
+
+// We somehow need to combine this ^^^ with this vvv
+
+/*
 admin.initializeApp({
     credential: admin.credential.cert(require('../keys/admin.json')),
     firebase: functions.config()
 });
+*/
+
+/*
+const adminConfig = JSON.parse(process.env.FIREBASE_CONFIG);
+adminConfig.credential = admin.credential.cert(require('../keys/admin.json'));
+admin.initializeApp(adminConfig, functions.config().firebase);
+*/
+
+/*
+admin.initializeApp({
+    credential: admin.credential.cert(require('../keys/admin.json')),
+    firebase: functions.config().firebase
+});
+*/
+
+
+admin.initializeApp({
+    credential: admin.credential.cert(require('../keys/admin.json'))
+});
+
+
+
+/*
+NOTES
+ -> admin.initializeApp(functions.config().firebase);
+    -> deploy
+        -> dropdown shows all names
+        -> can add new names
+        -> no names on the leaderboard
+    -> serve
+        -> drop down does not show names
+        -> no names on the leaderboard
+        -> could not load defult credentials
+ -> admin.initializeApp({
+    -> deploy
+        -> Error setting up the execution environment for your function
+        -> Functions deploy had errors with the following functions: app
+        -> Error: Functions did not deploy properly
+    -> serve
+        -> names on the leaderboard
+        -> dropdown shows all names
+*/
 
 let db = admin.firestore();
 
