@@ -35,7 +35,16 @@ a3.textContent = "➕ Add a Player";
 a3.append(i3);
 li3.append(a3);
 
+// add player
+const li4 = document.createElement('li');
+const a4 = document.createElement('a');
+const i4 = document.createElement('i');
+a4.href = "gamelog.html";
+a4.textContent = "➕ Game Log";
+a4.append(i4);
+li4.append(a4);
+
 // add all the tabs into the navbar
-ul.append(li1, li2, li3);
+ul.append(li1, li2, li3, li4);
 div.append(ul);
 document.getElementById("navbar").append(div);
