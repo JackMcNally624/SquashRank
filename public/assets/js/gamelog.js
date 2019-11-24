@@ -1,0 +1,19 @@
+
+
+getGameLog();
+async function getGameLog() {
+  const response2 = await fetch('/loadgames');
+  const games = await response2.json();
+
+  for (item of games) {
+    const row = document.createElement('tr');
+    const winner = document.createElement('td');
+    const loser = document.createElement('td');
+    const time = document.createElement('td');
+    winner.textContent = `${item.winner}`;
+    loser.textContent = `${item.loser}`;
+    time.textContent = `${item.time}`;
+    row.append(winner, loser, time);
+    document.getElementById("tablebody").append(row);
+  }
+}
