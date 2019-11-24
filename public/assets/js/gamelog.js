@@ -9,9 +9,11 @@ async function getGameLog() {
     const row = document.createElement('tr');
     const winner = document.createElement('td');
     const loser = document.createElement('td');
+    const time = document.createElement('td');
     winner.textContent = `${item.winner}`;
     loser.textContent = `${item.loser}`;
-    row.append(winner, loser);
+    time.textContent = `${item.time}`;
+    row.append(winner, loser, time);
     document.getElementById("tablebody").append(row);
   }
 }

@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var EloRank = require('elo-rank');
 var elo = new EloRank();
+const date = require('date-and-time');
 
 //Specify a port
 var port = process.env.port || 8080;
@@ -32,6 +33,10 @@ app.post('/user_create', (request, response) => {
 });
 
 app.post('/game_log', (request, response) => {
+  console.log(date.format(new Date(), 'hh:mm A MMM. DD YYYY'));
+  console.log(request.body);
+  request.body.time = date.format(new Date(), 'MMM. DD YYYY');
+  console.log(request.body);
   gameLog.insert(request.body);
   response.sendFile(path.join(__dirname + '/public/loggame.html'));
 });
