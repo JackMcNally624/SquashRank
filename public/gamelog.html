@@ -40,23 +40,33 @@
 				</div>
 			</div>
 			<!-- /. NAV TOP  -->
-      <nav class="navbar-default navbar-side" role="navigation" id="navbar">
+			<nav class="navbar-default navbar-side" role="navigation" id="navbar">
         <script src="assets/js/navbar.js"></script>
 			</nav>
 
     <!-- START DYNAMIC  -->
     <div id="page-wrapper" >
     <div id="page-inner">
-      <h2>Add Player</h2>
-      <form action="/user_create" method="POST">
-					<div class="form-group">
-					  <label for="usr">Player Name:</label>
-					  <input type="text" class="form-control" id="usr" name="name">
-					</div>
-					<button class="btn btn-success">Submit</button>
-			 </form>
+      <h2>Game Log</h2>
+
+      <table class="table table-hover">
+
+        <thead>
+          <tr>
+            <th>Winner</th>
+            <th>Loser</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+        <tbody id="tablebody">
+          <script src="assets/js/gamelog.js"></script>
+        </tbody>
+      </table>
     </div>
-    </div>
+  </div>
+</div>
+
+
     <!-- END DYNAMIC  -->
 
           <!-- /. WRAPPER  -->
@@ -67,14 +77,5 @@
     <script src="assets/js/bootstrap.min.js"></script>
       <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/6.6.1/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#reserved-urls -->
-
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
 </body>
 </html>

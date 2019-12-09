@@ -1,0 +1,27 @@
+{
+  "name": "squashrank",
+  "version": "1.0.0",
+  "description": "This web application ranks a group of Squash players using the Elo Rating System.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackMcNally624/SquashRank.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackMcNally624/SquashRank/issues"
+  },
+  "homepage": "https://github.com/JackMcNally624/SquashRank#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "date-and-time": "^0.11.0",
+    "elo-rank": "^1.0.3",
+    "express": "^4.17.1",
+    "nedb": "^1.8.0",
+    "path": "^0.12.7"
+  }
+}
