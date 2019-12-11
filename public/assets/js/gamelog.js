@@ -8,7 +8,7 @@ async function getGameLog() {
   for (let i = 1; i < games.length; i++) {
     let j = i - 1;
     let tmp = games[i];
-    while (j >= 0 && games[j].time > tmp.time) {
+    while (j >= 0 && games[j].date < tmp.date) {
       games[j + 1] = games[j];
       j--;
     }
