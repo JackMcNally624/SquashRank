@@ -33,11 +33,8 @@ app.post('/user_create', (request, response) => {
 });
 
 app.post('/game_log', (request, response) => {
-  console.log(date.format(new Date(), 'hh:mm A MMM. DD YYYY'));
-  console.log(request.body);
   request.body.time = date.format(new Date(), 'MMM. DD YYYY');
   request.body.date = new Date();
-  console.log(request.body);
   gameLog.insert(request.body);
   response.sendFile(path.join(__dirname + '/public/loggame.html'));
 });
