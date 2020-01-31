@@ -4,7 +4,7 @@
   "description": "This web application ranks a group of Squash players using the Elo Rating System.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,6 @@
   "engines": {
     "node": "12.14.1"
   },
-  "scripts": {
-    "start": "node index.js"
-  },
   "homepage": "https://github.com/JackMcNally624/SquashRank#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
@@ -28,6 +25,7 @@
     "elo-rank": "^1.0.3",
     "express": "^4.17.1",
     "nedb": "^1.8.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "timeout": "^0.2.1"
   }
 }
