@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', express.static(__dirname + '/public'));
 
 //Start up the website
-app.listen(port);
+app..listen(process.env.PORT || 5000);
 console.log('Listening on port: ', port);
 
 app.use(express.json({ limit: '1mb'}));
