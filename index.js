@@ -6,7 +6,7 @@ var elo = new EloRank();
 const date = require('date-and-time');
 
 //Specify a port
-var port = process.env.port || 8080;
+var port = process.env.port || 5000;
 
 const bodyParser = require('body-parser');
 const Datastore = require('nedb');
