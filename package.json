@@ -18,6 +18,9 @@
   "engines": {
     "node": "12.14.1"
   },
+  "scripts": {
+    "start": "node index.js"
+  },
   "homepage": "https://github.com/JackMcNally624/SquashRank#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
