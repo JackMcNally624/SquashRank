@@ -20,10 +20,10 @@
   },
   "homepage": "https://github.com/JackMcNally624/SquashRank#readme",
   "dependencies": {
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.1",
     "date-and-time": "^0.11.0",
     "elo-rank": "^1.0.3",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "nedb": "^1.8.0",
     "path": "^0.12.7",
     "timeout": "^0.2.1"
